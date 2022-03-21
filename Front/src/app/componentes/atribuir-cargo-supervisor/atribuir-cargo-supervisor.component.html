@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <div class="tabela1 w-75 p-3">
+        <div class="">
+          <h5 class="titulo text-center">Dados do Supervisor</h5>
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Nome do Supervisor</label>
+              <input [(ngModel)]="supervisor.sup_nome" name="sup_nome" type="text" readonly class="form-control" name="sup_nome">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Setor do supervisor</label>
+              <input [(ngModel)]="supervisor.sup_setor" name="pro_nome" type="text"readonly class="form-control"  name="sup_setor">
+            </div>
+            <button class="btn botao-desistir mx-3">Cancelar</button>
+          </form>
+
+
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="tabela1 w-75 p-3">
+        <h5 class="titulo text-center mx-3">Cargo do Supervisor: </h5>
+        <div class="">
+
+          <div class="mb-3">
+            <label class="form-label">Descrição do Cargo</label>
+            <input  type="text" readonly class="form-control"  [(ngModel)]="cargo.car_descricao"  name="car_descricao">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Nome do Cargo</label>
+            <input type="text"readonly class="form-control" [(ngModel)]="cargo.car_nome"  name="tu_descricao">
+          </div>
+          
+          <div class="">
+          <h5 class="titulo text-center"> Escolha um cargo para o supervisor:</h5>
+
+
+          <div class="">
+          <select [(ngModel)]="cargosSemSupervisorEscolhido" name="cargosSemSupervisorEscolhido" (ngModelChange)="escolherCargo()" >
+              <option *ngFor="let cargo of cargosSemSupervisor" [ngValue]="cargo" >
+                {{cargo.car_nome}} - {{cargo.car_descricao}}
+              </option>
+            </select >
+            <button (click)=" atribuirCargo()"  class="btn botao-cadastro mx-3 my-3">Salvar</button>
+          </div>
+        </div>
+          
+          <div class="d-flex">
+            <h5 class="titulo text-center">Deixar o Supervisor sem Cargo?</h5>
+            <div class="">
+            <button (click)="deixarCargoSemSupervisor()" class="btn botao-cadastro mx-3">Confirmar</button>
+          </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

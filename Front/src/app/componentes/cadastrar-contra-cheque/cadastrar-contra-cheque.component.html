@@ -1,0 +1,79 @@
+<body>
+  
+<div class="container d-flex justify-content-center my-5">
+<div class="card w-50 p-3">
+  <div class="card-body">
+    <h5 class="card-title titulo text-center">Cadastrar Contra-Cheque</h5>
+    <form>
+      <div class="mb-3">
+        <label class="form-label">Descrição</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="contraCheque.ch_descricao"
+          name="ch_descricao"
+        />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Data de Referencia</label>
+        <input
+          type="date"
+          class="form-control"
+          [(ngModel)]="contraCheque.ch_dataReferencia"
+          name="ch_dataReferencia"
+        />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Salario</label>
+        <input
+        currencyMask
+          type="text"
+          class="form-control"
+          [(ngModel)]="contraCheque.ch_salario"
+          name="ch_salario"
+          [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left' }"
+
+        />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Descontos</label>
+        <input
+        currencyMask
+          type="text"
+          class="form-control"
+          [(ngModel)]="contraCheque.ch_descontos"
+          name="ch_descontos"
+          [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left' }"
+        />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Valor Liquido</label>
+        <input
+        currencyMask
+          type="text"
+          class="form-control"
+          [(ngModel)]="contraCheque.ch_valorLiquido"
+          name="ch_valorLiquido"
+          [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left' }"
+        />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Status</label>
+        <input
+          type="text"
+          class="form-control"
+          readonly
+          value="PENDENTE"
+          [(ngModel)]="contraCheque.ch_status"
+          name="ch_status"
+        />
+      </div>
+      <button (click)="inserirContraCheque()" class="btn botao-cadastro">
+        Cadastrar
+      </button>
+      <button class="btn botao-desistir mx-3">Cancelar</button>
+    </form>
+  </div>
+</div>
+</div>
+</body>

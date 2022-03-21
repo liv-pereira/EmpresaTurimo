@@ -1,0 +1,40 @@
+<body>
+  
+
+<div class="container d-flex justify-content-center my-5">
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title titulo text-center">Alteração dos dados dos Funcionários</h5>
+    <hr />
+    <form>
+      <div class="mb-3">
+        <label class="form-label">Nome do Funcionário</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="funcionario.fu_nome"
+          name="al_nome"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Cidade do Funcionário</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="funcionario.fu_cidade"
+          name="al_cidade"
+        />
+      </div>
+      <button (click)="editarFuncionario()" class="btn botao-cadastro">
+        Alterar
+      </button>
+      <button (click)="cancelarEdicao()" class="btn botao-desistir mx-3">
+        Cancelar
+      </button>
+
+    </form>
+  </div>
+</div>
+</div>
+</body>

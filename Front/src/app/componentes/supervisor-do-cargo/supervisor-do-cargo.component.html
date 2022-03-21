@@ -1,0 +1,131 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <div class="tabela1 w-75 p-3">
+        <div class="card-body">
+          <h5 class="card-title titulo text-center">Dados do Cargo</h5>
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Descrição do Cargo</label>
+              <input type="text" readonly class="form-control" [(ngModel)]="cargo.car_descricao" name="car_descricao">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Nome do Cargo</label>
+              <input  type="text"readonly class="form-control"  [(ngModel)]="cargo.car_nome" name="tu_descricao">
+            </div>
+            <button routerLink="/turma" class="btn btn-secondary mx-3">Cancelar</button>
+          </form>
+
+
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="tabela1 w-75 p-3">
+        <h5 class="card-title  titulo text-center mx-3">Supervisor do Cargo: {{cargo.id_cargo}}</h5>
+        <div class="card-body">
+
+          <div class="mb-3">
+            <label class="form-label">Nome do Supervisor</label>
+            <input type="text" readonly class="form-control"[(ngModel)]="supervisor.sup_nome"  name="pro_nome">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Setor Responsável</label>
+            <input type="text"readonly class="form-control" [(ngModel)]="supervisor.sup_setor"  name="pro_formacao">
+          </div>
+    
+          <div class="">
+          <h5 class="card-title titulo text-center my-4"> Escolha um novo Supervisor para esse Cargo:</h5>
+
+
+          <div class="">
+          <select [(ngModel)]="supervisorSemCargoSelecionado" name="supervisorSemCargoSelecionado" (ngModelChange)="escolherSupervisor()"  >
+              <option *ngFor="let supervisor of supervisoresSemCargo" [ngValue]="supervisor">
+                {{supervisor.sup_nome}} - {{supervisor.sup_setor}}
+              </option>
+            </select>
+            <button (click)="atribuirSupervisor()"  class="btn botao-cadastro mx-3">Salvar</button>
+          </div>
+        </div>
+        
+          <div class=" d-flex my-3">
+            <h5 class="card-title text-center titulo">Deixar Cargo sem Supervisor?</h5>
+            <div class="">
+            <button (click)="deixarCargoSemSupervisor()"  class="btn botao-cadastro">Confirmar</button>
+          </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- <body>
+
+
+<div class="card w-50 p-3">
+  <div class="card-body">
+    <h5 class="card-title">Supervisão / Cargos</h5>
+    <form>
+      <div class="mb-3">
+        <label class="form-label">Nome do Supervisor</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="supervisor.sup_nome"
+          name="sup_nome"
+        />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Setor responsável</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="supervisor.sup_setor"
+          name="sup_setor"
+        />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Foto</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="supervisor.sup_foto"
+          name="sup_foto"
+        />
+      </div>
+      <button *ngIf="supervisorCadastrado" class="btn btn-primary">
+        Alterar dados do supervisor
+      </button>
+      <div *ngIf="!supervisorCadastrado" >
+        <div class="card">
+          <div class="card-body">
+
+        <select [(ngModel)]="supervisorSemCargoSelecionado" name="supervisorSemCargoSelecionado"
+        (ngModelChange)=" mostrarSupervisor()">
+          <option *ngFor="let supervisor of supervisoresSemCargo" [ngValue]="supervisor">
+            {{supervisor.sup_nome}}
+          </option>
+
+        </select>
+        <button (click)="atribuirSupervisor()"  class="btn btn-primary mx-3" >
+          Salvar
+         </button>
+         </div>
+        </div>
+    </div>
+      <button class="btn btn-secondary mx-3">Cancelar</button>
+    </form>
+  </div>
+</div>
+</body> -->

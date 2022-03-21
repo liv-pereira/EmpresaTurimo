@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <div class="tabela1 w-75 p-3">
+        <div class="">
+          <h5 class="titulo text-center">Dados do Funcionario</h5>
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Nome do Funcionario</label>
+              <input type="text" [(ngModel)]="funcionario.fu_nome" readonly class="form-control" name="ra_nome">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Cidade</label>
+              <input [(ngModel)]="funcionario.fu_cidade" type="text" readonly class="form-control" [(ngModel)]="funcionario.fu_cidade" name="fu_cidade">
+            </div>
+            <button   class="btn botao-desistir mx-3">Cancelar</button>
+          </form>
+          
+
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="tabela2 w-75 p-3">
+        <h5 class=" titulo text-center  mx-3">Cargo do Funcionario: {{cargoEscolhido.id_cargo}} </h5>
+        <div class="">
+
+          <div class="mb-3">
+            <label class="form-label">Nome do Cargo</label>
+            <input [(ngModel)]="cargoEscolhido.car_nome"  type="text" readonly class="form-control" name="car_nome">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Descrição do Cargo</label>
+            <input  [(ngModel)]="cargoEscolhido.car_descricao" type="text"readonly class="form-control"   name="car_descricao">
+          </div>
+          <div class="  justify-content-center ">
+          <h5 class=" titulo text-center"> Escolha um novo cargo para o funcionário:</h5>
+
+          
+          <select  [(ngModel)]="cargoEscolhido" (ngModelChange)="mostrarCargo()" name="cargoEscolhido" >
+            <option  *ngFor="let cargo of cargo" [ngValue]="cargo">
+              {{cargo.car_nome}} - {{cargo.car_descricao}}
+
+            </option>
+          </select>
+          <button (click)="atribuirCargo()"class="btn botao-cadastro mx-3 my-3">Salvar</button>
+          
+          <div class="d-flex">
+            <h5 class=" titulo text-center">Deixar Funcionario sem Cargo?
+              <button (click)="deixarFuncionarioSemCargo()" class="btn botao-cadastro my-3 mx-3">Confirmar</button>
+            </h5>
+          </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

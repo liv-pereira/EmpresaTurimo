@@ -1,0 +1,69 @@
+
+
+
+<div class="container">
+<div class="card-body">
+  <h5 class="card-title my-3 text-center titulo fs-3">Lista de Cargos</h5>
+  <button routerLink="/cadastroCargo" class="btn botao-cadastrar">
+    Cadastrar Cargo
+  </button>
+  <table class="table">
+    <thead>
+      <tr class="tabela coluna">
+        <th  scope="col">Código</th>
+        <th scope="col">Descrição do Cargo</th>
+        <th scope="col">Nome do Cargo</th>
+        <th scope="col">Funcionários</th>
+        <th scope="col">Nome do supervisor</th >
+        <th scope="col">Setor Responsável</th>
+        <th scope="col">Atribuir supervisor</th>
+        <th scope="col">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="linhas" *ngFor="let cargo of cargos">
+        <th class="id-color" scope="row">{{ cargo.id_cargo }}</th>
+        <td>{{ cargo.car_descricao }}</td>
+        <td>{{ cargo.car_nome }}</td>
+        <td class="text-center">
+          <i
+
+            routerLink="/funcionarioCargo/{{ cargo.id_cargo }}"
+
+          ><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+          width="30" height="30"
+          viewBox="0 0 172 172"
+          style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#19456a"><path d="M97.46667,143.33333h22.93333v11.46667h34.4c0,-40.13333 -45.86667,-28.66667 -51.6,-45.86667v-11.46667c2.58,-1.27853 9.9588,-10.062 10.7328,-16.9248c2.0296,-0.1548 5.21733,-2.01813 6.1576,-9.374c0.50453,-3.95027 -1.50213,-6.16907 -2.7176,-6.86853c0,0 3.0272,-5.75053 3.0272,-12.6936c0,-13.92053 -5.46387,-25.8 -17.2,-25.8c0,0 -4.0764,-8.6 -17.2,-8.6c-24.3208,0 -34.4,15.6004 -34.4,34.4c0,6.3296 3.0272,12.6936 3.0272,12.6936c-1.21547,0.69947 -3.22213,2.924 -2.7176,6.86853c0.94027,7.35587 4.128,9.2192 6.1576,9.374c0.774,6.8628 8.1528,15.64627 10.7328,16.9248v11.46667c-5.73333,17.2 -51.6,5.73333 -51.6,45.86667h80.26667z"></path></g></g></svg></i>
+        </td>
+        <td>{{cargo.sup_nome}}</td>
+        <td>{{cargo.sup_setor}}</td>
+
+        <td>
+          <button class="btn botao-atribuicao" routerLink="/supervisorDocargo/{{ cargo.id_cargo }}">Supervisor</button>
+        </td>
+
+        <td>
+          <i
+            routerLink="/edicaoCargo/{{ cargo.id_cargo }}"
+
+          ><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+          width="24" height="24"
+          viewBox="0 0 172 172"
+          style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#19456a"><path d="M14.33333,28.66667v114.66667h87.23177l56.10156,-56.10156v-44.23177h-71.66667l-14.33333,-14.33333zM157.75065,107.41601l-9.7002,9.7002l14.33333,14.33333l9.71419,-9.71419zM142.9694,122.19726l-35.4694,35.4694v14.33333h14.33333l35.4694,-35.4694z"></path></g></g></svg></i>
+          <i
+            routerLink="/exclusaoCargo/{{ cargo.id_cargo }}"
+
+          ><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+          width="24" height="24"
+          viewBox="0 0 172 172"
+          style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#a2312e"><path d="M71.66667,14.33333l-7.16667,7.16667h-43v14.33333h129v-14.33333h-43l-7.16667,-7.16667zM31.28418,50.16667l10.94596,95.05632c0.946,7.095 7.05502,12.44368 14.20736,12.44368h59.111c7.15233,0 13.26819,-5.34018 14.22135,-12.49968l10.94597,-95.00032z"></path></g></g></svg></i>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+
+
+</div>
+</div>
+

@@ -1,0 +1,41 @@
+<body>
+  
+
+<div class="container">
+<div class="card-body">
+  <div class="bloco1 ">
+  <h5 class="card-title  titulo my-3  text-center" >Lista de Funcionários do Cargo {{id_cargo}}: {{cargo.car_nome}} </h5>
+  <!-- <button
+    routerLink="/funcionarioCadastro/{{ id_cargo }}"
+    class="btn btn-secondary "
+
+  >
+    Cadastrar Funcionário
+   </button> -->
+
+</div>
+  <hr />
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Código</th>
+        <th scope="col">Nome do Funcionário</th>
+        <th scope="col">Cidade</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let funcionario of funcionarios">
+        <th scope="row">{{ funcionario.ra_funcionario }}</th>
+
+        <td>{{ funcionario.fu_nome }}</td>
+        <td>{{ funcionario.fu_cidade }}</td>
+       
+
+       
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+</body>

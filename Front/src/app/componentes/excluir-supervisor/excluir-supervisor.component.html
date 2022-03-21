@@ -1,0 +1,35 @@
+<body> 
+<div class="container d-flex justify-content-center my-5">
+<div class="card w-50 p-3">
+  <div class="card-body">
+    <h5 class="card-title titulo text-center">Exclusão do Supervisor</h5>
+    <hr />
+    <form>
+      <div class="mb-3">
+        <label class="form-label">Nome do Supervisor</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="supervisor.sup_nome" name="al_nome"
+
+          name="sup_nome"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Setor Responsável</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="supervisor.sup_setor"
+
+          name="fu_cidade"
+        />
+      </div>
+      <button (click)="excluirSupervisor()" class="btn botao-cadastro">Excluir</button>
+      <button (click)=" cancelarExclusao()" class="btn botao-desistir mx-3">Cancelar</button>
+    </form>
+  </div>
+</div>
+</div>
+</body>

@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+body{
+  background-color:#caa48a;
+  font-family: 'Poppins'
+}
+.card{
+  background-color:#caa48a;
+}
+
+.titulo{
+  color: #19456a;
+  font-weight: 700;
+}
+.botao-desistir{
+  background-color: #a2312e;
+  color: white;
+}
+.botao-cadastro{
+  background-color: #19456a;
+  color: white;
+}

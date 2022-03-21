@@ -1,0 +1,38 @@
+<body> 
+<div class="container d-flex justify-content-center my-5">
+<div class="card w-50 p-3">
+  <div class="card-body ">
+    <h5 class="card-title titulo text-center">Edição de Contracheque</h5>
+    <form>
+      <div class="mb-3">
+        <label class="form-label">Descrição</label>
+        <input type="text" class="form-control" [(ngModel)]="contraCheque.ch_descricao" name="ch_descricao">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Data de Referência</label>
+        <input type="date" class="form-control" [(ngModel)]="contraCheque.ch_dataReferencia"  name="ch_dataVencimento" >
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Salário</label>
+        <input type="text"  class="form-control" [(ngModel)]="contraCheque.ch_salario"  currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left' }">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Descontos</label>
+        <input type="text"  class="form-control" [(ngModel)]="contraCheque.ch_descontos"  currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left' }">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Valor Líquido</label>
+        <input type="text"  class="form-control" [(ngModel)]="contraCheque.ch_valorLiquido"  currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left' }">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Status</label>
+        <input type="text" class="form-control" readonly [(ngModel)]="contraCheque.ch_status" name="bo_status">
+      </div>
+      <button (click)="editarBoleto()"  class="btn botao-cadastro ">Salvar</button>
+      <button class="btn botao-desistir mx-3 ">Cancelar</button>
+    </form>
+
+  </div>
+</div>
+</div>
+</body>

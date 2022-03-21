@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=Crete+Round|Poppins');
+.wrapper-content {
+width: 100%;
+height: 110vh;
+
+top: -60px;
+}
+body {
+  background-color: #caa48a;  ;
+}
+.box-tile {
+width: 40vw;
+height: 100px;
+position: absolute;
+top: 30%;
+left: 10%;
+padding: 10px;
+}
+.wrapper-content h1 {
+font-size: 45pt;
+color: #caa48a;
+text-shadow: 2px 2px black;
+font-family: 'Poppins', serif !important;
+}
+
+.bg_img{
+right: 0;
+bottom: 0;
+min-width: 100%;
+min-height: 100%;
+width: auto;
+height: auto;
+z-index: -1000;
+background: url('https://images.pexels.com/photos/3476890/pexels-photo-3476890.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500') no-repeat;
+background-size: cover;
+}
+.depoimento{
+  background-color:#caa48a;
+}
+.card {
+  background-color:#caa48a;
+  border-color: #19456a;
+  border: solid ;
+  color: #19456a;
+  font-weight: 600;
+}
+.btn{
+  background-color: #19456a;
+  color: white;
+}
+.titulo{
+  color: #19456a;
+  font-weight: 700;
+}

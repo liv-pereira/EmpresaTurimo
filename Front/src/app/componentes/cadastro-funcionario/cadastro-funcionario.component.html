@@ -1,0 +1,49 @@
+<body>
+<div class="container d-flex justify-content-center my-5">
+<div class="card w-50 d-flex p-4 ">
+  <div class="card-body ">
+    <h5 class="card-title titulo text-center">Cadastro de novo funcionario</h5>
+    <hr />
+    <form>
+      <div class="mb-3">
+        <label class="form-label">Nome do funcionário</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="funcionario.fu_nome"
+          name="fu_nome"
+        />
+        <p
+          th:if="${#fields.hasErrors('nome')}"
+          th:class="${#fields.hasErrors('nome')}? error"
+          class="text-danger"
+        >
+
+        </p>
+      </div>
+      
+      
+      <div class="mb-3">
+        <label class="form-label">Cidade</label>
+        <input
+          type="text"
+          [(ngModel)]="funcionario.fu_cidade"
+          class="form-control"
+          name="fu_cidade"
+        />
+      </div>
+      <button (click)="cadastroFuncionario()" class="btn botao-cadastro">
+        Cadastrar
+      </button>
+      <button type="reset" class="btn botao-desistir mx-3">Cancelar</button>
+      <button
+        routerLink="/listaGeralFuncionario"
+        class="btn botao-desistir"
+      >
+        Voltar
+      </button>
+    </form>
+  </div>
+</div>
+</div>
+</body>

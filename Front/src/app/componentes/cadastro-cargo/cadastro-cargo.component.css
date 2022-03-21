@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Crete+Round|Poppins');
+
+
+body{
+  background-color:#caa48a;
+  font-family: 'Poppins'
+}
+
+.card
+{
+  background-color:#caa48a;
+ 
+  
+  border-radius: 15px; 
+   box-shadow: 10px 40px 50px #655145
+  
+}
+
+.botao-cadastro{
+  background-color: #19456a;
+  color: white;
+}
+.botao-desistir{
+  background-color: #a2312e;
+  color: white;
+}
+.titulo{
+  color: #19456a;
+  font-weight: 700;
+}

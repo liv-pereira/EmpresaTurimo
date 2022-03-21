@@ -1,0 +1,130 @@
+<body>
+<div class="container">
+<div class="card">
+  <div class="card-body">
+    <div class="bloco 1 d-flex-center">
+    <h5 class="card-title titulo my-3  text-center">Contracheque: {{ nomeFuncionario }}</h5>
+    
+  </div>
+    <div style="height: 300px; overflow: auto">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Codigo</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Data de Referencia</th>
+            <th scope="col">Salário</th>
+            <th scope="col">Descontos</th>
+            <th scope="col">Valor Líquido</th>
+            <th scope="col">Status</th>
+            <th scope="col">Cancelar</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let contraCheque of contraCheques">
+            <th scope="row">{{ contraCheque.codigo }}</th>
+            <td>{{ contraCheque.ch_descricao }}</td>
+            <td>{{ contraCheque.ch_dataReferencia | date: "dd/MM/yyyy" }}</td>
+            <td>{{ contraCheque.ch_salario | currency: "BRL" }}</td>
+            <td>{{ contraCheque.ch_descontos | currency: "BRL" }}</td>
+            <td>{{ contraCheque.ch_valorLiquido | currency: "BRL" }}</td>
+            <td>{{ contraCheque.ch_status }}</td>
+            <td><button (click)="cancelarContraCheque(contraCheque.codigo)" *ngIf="contraCheque.ch_status == 'PENDENTE'"class="btn botao-desistir">C</button></td>
+
+
+            <td>
+              <i
+              routerLink="/contraCheque/edicao/{{contraCheque.codigo}}/{{ra_funcionario}}"
+              
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              width="24"
+              height="24"
+              viewBox="0 0 172 172"
+              style="fill: #000000"
+            >
+              <g
+                fill="none"
+                fill-rule="nonzero"
+                stroke="none"
+                stroke-width="1"
+                stroke-linecap="butt"
+                stroke-linejoin="miter"
+                stroke-miterlimit="10"
+                stroke-dasharray=""
+                stroke-dashoffset="0"
+                font-family="none"
+                font-weight="none"
+                font-size="none"
+                text-anchor="none"
+                style="mix-blend-mode: normal"
+              >
+                <path d="M0,172v-172h172v172z" fill="none"></path>
+                <g fill="#19456a">
+                  <path
+                    d="M14.33333,28.66667v114.66667h87.23177l56.10156,-56.10156v-44.23177h-71.66667l-14.33333,-14.33333zM157.75065,107.41601l-9.7002,9.7002l14.33333,14.33333l9.71419,-9.71419zM142.9694,122.19726l-35.4694,35.4694v14.33333h14.33333l35.4694,-35.4694z"
+                  ></path>
+                </g>
+              </g></svg
+          ></i>
+          <i
+          routerLink="/contraCheque/exclusao/{{contraCheque.codigo}}/{{ra_funcionario}}"
+
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            x="0px"
+            y="0px"
+            width="24"
+            height="24"
+            viewBox="0 0 172 172"
+            style="fill: #000000"
+          >
+            <g
+              fill="none"
+              fill-rule="nonzero"
+              stroke="none"
+              stroke-width="1"
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-miterlimit="10"
+              stroke-dasharray=""
+              stroke-dashoffset="0"
+              font-family="none"
+              font-weight="none"
+              font-size="none"
+              text-anchor="none"
+              style="mix-blend-mode: normal"
+            >
+              <path d="M0,172v-172h172v172z" fill="none"></path>
+              <g fill="#a2312e">
+                <path
+                  d="M71.66667,14.33333l-7.16667,7.16667h-43v14.33333h129v-14.33333h-43l-7.16667,-7.16667zM31.28418,50.16667l10.94596,95.05632c0.946,7.095 7.05502,12.44368 14.20736,12.44368h59.111c7.15233,0 13.26819,-5.34018 14.22135,-12.49968l10.94597,-95.00032z"
+                ></path>
+              </g>
+            </g></svg
+        ></i>
+              
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <button
+      routerLink="/funcionario/contraCheque/cadastro/{{ ra_funcionario }}"
+      class="btn botao-cadastro mx-3"
+    >
+      Cadastrar Contra Cheque
+    </button>
+      <button routerLink="/alunosComTurma" class="btn botao-desistir">
+        Voltar
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+

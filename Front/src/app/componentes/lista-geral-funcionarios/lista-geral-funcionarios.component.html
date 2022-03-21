@@ -1,0 +1,146 @@
+<div class="container my-3">
+  <div class="card-body">
+    <h5 class="card-title titulo text-center fs-3">Funcionários da Empresa</h5>
+    <button routerLink="/funcionario/cadastrar" class="btn botao-cadastrar">Cadastrar Funcionário</button>
+    <hr />
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Código</th>
+          <th scope="col">Nome do Funcionário</th>
+          <th scope="col">Cidade</th>
+          <th scope="col">Descrição do Cargo</th>
+          <th scope="col">Nome do Cargo</th>
+          <th scope="col">Atribuir Cargo</th>
+
+          <th scope="col">Contracheque</th>
+
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let funcionario of funcionarios">
+          <th scope="row">{{ funcionario.ra_funcionario }}</th>
+          <td>{{ funcionario.fu_nome }}</td>
+          <td>{{ funcionario.fu_cidade }}</td>
+          <td>{{funcionario.car_descricao}}</td>
+          <td>{{funcionario.car_nome}}</td>
+          <td><Button routerLink="/funcionario/atribuirCargo/{{funcionario.ra_funcionario}}/{{funcionario.id_cargo}}" class="btn botao-atribuicao">Cargo</Button></td>
+          <td class="text-center">
+            <svg
+
+            routerLink="/funcionario/contraCheque/{{funcionario.ra_funcionario}}"
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              width="24"
+              height="24"
+              viewBox="0 0 172 172"
+              style="fill: #000000"
+            >
+              <g
+                fill="none"
+                fill-rule="nonzero"
+                stroke="none"
+                stroke-width="1"
+                stroke-linecap="butt"
+                stroke-linejoin="miter"
+                stroke-miterlimit="10"
+                stroke-dasharray=""
+                stroke-dashoffset="0"
+                font-family="none"
+                font-weight="none"
+                font-size="none"
+                text-anchor="none"
+                style="mix-blend-mode: normal"
+              >
+                <path d="M0,172v-172h172v172z" fill="none"></path>
+                <g fill="#19456a">
+                  <path
+                    d="M21.5,21.5c-7.91917,0 -14.33333,6.41417 -14.33333,14.33333v14.33333c0,7.91917 6.41417,14.33333 14.33333,14.33333h14.33333v79.05729c0,3.83417 3.10854,6.94271 6.94271,6.94271h2.29557c2.37217,0 4.78991,-1.09807 5.86491,-3.2194c1.17533,-2.33633 3.60181,-3.94726 6.39681,-3.94726c2.795,0 5.22148,1.61093 6.39681,3.94726c1.075,2.12133 3.49274,3.2194 5.86491,3.2194h4.14323c2.37217,0 4.78991,-1.09807 5.86491,-3.2194c1.17533,-2.33633 3.60181,-3.94726 6.39681,-3.94726c2.795,0 5.22148,1.61093 6.39681,3.94726c1.075,2.12133 3.49274,3.2194 5.86491,3.2194h4.14322c2.37217,0 4.78991,-1.09807 5.86491,-3.2194c1.17533,-2.33633 3.60181,-3.94726 6.39681,-3.94726c2.795,0 5.22148,1.61093 6.39681,3.94726c1.075,2.12133 3.49275,3.2194 5.86491,3.2194h2.29557c3.83417,0 6.94271,-3.10854 6.94271,-6.94271v-79.05729h14.33333c7.91917,0 14.33333,-6.41417 14.33333,-14.33333v-14.33333c0,-7.91917 -6.41417,-14.33333 -14.33333,-14.33333zM50.16667,35.83333h71.66667v93.16667h-71.66667zM71.66667,50.16667c-3.956,0 -7.16667,3.21067 -7.16667,7.16667c0,3.956 3.21067,7.16667 7.16667,7.16667h28.66667c3.956,0 7.16667,-3.21067 7.16667,-7.16667c0,-3.956 -3.21067,-7.16667 -7.16667,-7.16667zM71.66667,78.83333c-3.956,0 -7.16667,3.21067 -7.16667,7.16667c0,3.956 3.21067,7.16667 7.16667,7.16667h14.33333c3.956,0 7.16667,-3.21067 7.16667,-7.16667c0,-3.956 -3.21067,-7.16667 -7.16667,-7.16667z"
+                  ></path>
+                </g>
+              </g>
+            </svg>
+          </td>
+
+          <td>
+            <i
+            routerLink="/funcionario/edicao/{{funcionario.ra_funcionario}}"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            x="0px"
+            y="0px"
+            width="24"
+            height="24"
+            viewBox="0 0 172 172"
+            style="fill: #000000"
+          >
+            <g
+              fill="none"
+              fill-rule="nonzero"
+              stroke="none"
+              stroke-width="1"
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-miterlimit="10"
+              stroke-dasharray=""
+              stroke-dashoffset="0"
+              font-family="none"
+              font-weight="none"
+              font-size="none"
+              text-anchor="none"
+              style="mix-blend-mode: normal"
+            >
+              <path d="M0,172v-172h172v172z" fill="none"></path>
+              <g fill="#19456a">
+                <path
+                  d="M14.33333,28.66667v114.66667h87.23177l56.10156,-56.10156v-44.23177h-71.66667l-14.33333,-14.33333zM157.75065,107.41601l-9.7002,9.7002l14.33333,14.33333l9.71419,-9.71419zM142.9694,122.19726l-35.4694,35.4694v14.33333h14.33333l35.4694,-35.4694z"
+                ></path>
+              </g>
+            </g></svg
+        ></i>
+        <i
+        routerLink="/funcionario/delete/{{funcionario.ra_funcionario}}"
+
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            x="0px"
+            y="0px"
+            width="24"
+            height="24"
+            viewBox="0 0 172 172"
+            style="fill: #000000"
+          >
+            <g
+              fill="none"
+              fill-rule="nonzero"
+              stroke="none"
+              stroke-width="1"
+              stroke-linecap="butt"
+              stroke-linejoin="miter"
+              stroke-miterlimit="10"
+              stroke-dasharray=""
+              stroke-dashoffset="0"
+              font-family="none"
+              font-weight="none"
+              font-size="none"
+              text-anchor="none"
+              style="mix-blend-mode: normal"
+            >
+              <path d="M0,172v-172h172v172z" fill="none"></path>
+              <g fill="#a2312e">
+                <path
+                  d="M71.66667,14.33333l-7.16667,7.16667h-43v14.33333h129v-14.33333h-43l-7.16667,-7.16667zM31.28418,50.16667l10.94596,95.05632c0.946,7.095 7.05502,12.44368 14.20736,12.44368h59.111c7.15233,0 13.26819,-5.34018 14.22135,-12.49968l10.94597,-95.00032z"
+                ></path>
+              </g>
+            </g></svg
+        ></i>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
